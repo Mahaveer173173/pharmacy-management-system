@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <title>PMS - <%= title %></title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Pharmacy Management System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-5 px-5"> 
+          <% pages.forEach(function(page) { %>
+            <% if(page.slug =="home"){ %>
+              <li><a class="nav-link active" href="/"><%= page.title %></a></li>
+            <% }else{ %> 
+            <li><a class="nav-link active" href="<%= page.slug %>"><%= page.title %></a></li>
+            <% } %> 
+          <% }); %> 
+        </ul>
+        <ul class="navbar-nav mx-5">
+          <li><a class="nav-link active" href="/cart/checkout">My Cart (
+            <% if(typeof cart !== "undefined"){ %>
+              <%= cart.length %>
+              <% }else{ %>  
+                0
+            <% } %>   
+          )</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- container -->
+    <br>
+    <h2 class="text-center">Pharmacy Management System</h2>
+    <hr>
+    <br>
+
+    <div class="container">
+      <%- messages('messages', locals) %> 
+
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
+          <h3 class="text-center">Categories</h3>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="/products">All Products</a></li>
+            <% categories.forEach(function(c){ %>
+              <li class="list-group-item"><a href="/products/<%= c.slug %>"><%= c.title %> </a></li> 
+            <% }); %> 
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-1"></div>
+        <div class="col-xs-12 col-md-8 my-5">
+
+

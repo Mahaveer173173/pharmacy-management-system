@@ -1,0 +1,25 @@
+img.pimage{
+    width: 150px;
+    height: 150px;
+}
+
+a.pa{
+    display: inline-block;
+    height: 160px;
+}
+
+.row.products .p{
+    margin: 20px 0;
+}
+
+img.spi{
+    width: 100%;
+}
+
+img.cpi{
+    width: 100px;
+}
+
+table.alignmiddle td{
+    vertical-align: middle !important;
+}

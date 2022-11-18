@@ -1,0 +1,20 @@
+.sorting tr:not(.home){
+    cursor: pointer;
+}
+
+.ui-state-highlight{
+    border: 1px dotted #ccc;
+}
+
+#img-preview{
+    margin: 20px;
+}
+
+#noimage{
+    width: 100px;
+    height: 100px;
+}
+
+table.alignmiddle td{
+    vertical-align: middle !important;
+}
